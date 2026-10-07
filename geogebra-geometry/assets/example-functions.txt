@@ -1,0 +1,19 @@
+# Example: Quadratic function + Hyperbola + Tangent
+# Render:
+#   node scripts/render.js --out funcs.png --app graphing --keep-axes \
+#     --view -5,5,-5,5 --width 1000 --height 1000 --cmd-file example-functions.txt
+f(x)=x^2 - 1
+g(x)=1/x
+P=(1,1)
+t=Tangent(P,g)
+keep(t)
+setColor(f,"#1c7ed6")
+setLineThickness(f,3)
+setColor(g,"#e8590c")
+setLineThickness(g,3)
+setColor(P,"#c92a2a")
+setPointSize(P,8)
+setColor(t,"#adb5bd")
+setLineThickness(t,1)
+setLineStyle(t,2)
+setLabelVisible(t,false)

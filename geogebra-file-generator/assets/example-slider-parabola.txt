@@ -1,0 +1,19 @@
+# Example: Interactive Parabola with Dynamic Sliders
+# Generates an interactive .ggb file where dragging sliders updates the curve
+a=Slider(-4, 4, 0.2)
+b=Slider(-6, 6, 0.2)
+c_val=Slider(-5, 5, 0.2)
+SetValue(a, 1)
+SetValue(b, -2)
+SetValue(c_val, -1)
+
+f(x)=a*x^2 + b*x + c_val
+V=(-b/(2*a), f(-b/(2*a)))
+
+setColor(f,"#1c7ed6")
+setLineThickness(f,3)
+setColor(V,"#c92a2a")
+setPointSize(V,8)
+setColor(a,"#e03131")
+setColor(b,"#2b8a3e")
+setColor(c_val,"#7048e8")

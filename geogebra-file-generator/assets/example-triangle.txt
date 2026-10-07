@@ -1,0 +1,29 @@
+# Example: Triangle with circumcircle, incenter, and movable vertices
+# Generates a standard interactive .ggb file
+A=(0,0)
+B=(7,0)
+C=(2,4.5)
+t1=Polygon(A,B,C)
+c_out=Circle(A,B,C)
+
+b1=AngleBisector(B,A,C)
+b2=AngleBisector(A,B,C)
+I=Intersect(b1,b2)
+p=PerpendicularLine(I,Line(A,B))
+D=Intersect(p,Line(A,B))
+c_in=Circle(I,D)
+
+setColor(t1,"#1c7ed6")
+setLineThickness(t1,3)
+setFilling(t1,0.12)
+setColor(c_out,"#e8590c")
+setLineThickness(c_out,2)
+setColor(c_in,"#2b8a3e")
+setLineThickness(c_in,2)
+setColor(I,"#c92a2a")
+setPointSize(I,8)
+
+setVisible(b1,false)
+setVisible(b2,false)
+setVisible(p,false)
+setVisible(D,false)
